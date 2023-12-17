@@ -1,0 +1,26 @@
+.header1 {
+    background-color: black;
+    color: #fff;
+    max-width: 1660px ;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+padding: 0 20px;
+  }
+  
+  .header1 ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }

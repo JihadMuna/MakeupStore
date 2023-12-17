@@ -1,0 +1,11 @@
+.Home {
+    display: flex;
+    flex-direction: row;
+    font-size:x-large;
+    margin: 30px 40px;
+}
+
+.description {
+max-width: 500px ;
+margin: 30px 40px;
+}

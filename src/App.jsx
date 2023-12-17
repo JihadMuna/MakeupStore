@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
+import Home from './Pages/Home';
+import Login from './Pages/Login';
+import ErrorPage from './Pages/ErrorPage'; 
+import Products from './Pages/Products'
+import CustomProduct from './Pages/CustomProduct'
+import AboutUs from './Pages/AboutUs'
+import ContactUs from './Pages/ContactUs'
+import SignUp from './Pages/SignUp'
+import ProductsContextComponent from './context/ProductsContextComponent'
+import Mainbar from './Components/Mainbar/Mainbar'
+import FaceMakeup from './Pages/FaceMakeup';
+import EyeMakeup from './Pages/EyeMakeup';
+import LipMakeup from './Pages/LipMakeup';
+import SkinCare from './Pages/SkinCare';
+import SearchItem from './Pages/SearchItem';
+import FavoriteItems from "./Pages/FavoriteItems";
+import ShoppingCart from './Pages/ShoppingCart';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isError, setIsError] = useState(false);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter>
+        <ProductsContextComponent>
+          {isError ? (
+            <Routes>
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+          ) : (
+            <>
+              <Navbar />
+              <Mainbar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/contact" element={<ContactUs />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/custom" element={<CustomProduct />} />
+                <Route path="/face-makeup" element={<FaceMakeup />} />
+                <Route path="/eye-makeup" element={<EyeMakeup />} />
+                <Route path="/lip-makeup" element={<LipMakeup />} />
+                <Route path="/skin-care" element={<SkinCare />} />
+                <Route path="/search-item" element={<SearchItem />} />
+                <Route path="/favorite-items" element={<FavoriteItems />} />
+                <Route path="/shopping-cart" element={<ShoppingCart />} />
+              </Routes>
+            </>
+          )}
+        </ProductsContextComponent>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

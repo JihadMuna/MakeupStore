@@ -1,0 +1,36 @@
+/* CategoryDropdown.module.css */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown span {
+    cursor: pointer;
+  }
+  
+  .dropdown ul {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: none;
+  }
+  
+  .dropdown ul li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown ul li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dropdown:hover ul {
+    display: block;
+  }
+  

@@ -1,0 +1,45 @@
+/* Posts.css */
+.postcontainer {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    background-color: #1b1a1a;
+    
+  
+    
+  }
+  .cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* padding: 10px 0; */
+    
+    background-color: #333;
+  }
+ 
+  
+  h1 ,h3 {
+    color: #333;
+    margin-bottom: 10px;
+    color: rgb(133, 59, 16);
+  }
+ 
+  
+  .para {
+    /* color: #555; */
+    line-height: 1.6;
+    color: rgb(246, 141, 80);
+  }
+  
+  /* Optional: Add styling for hover effect */
+  .post-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
