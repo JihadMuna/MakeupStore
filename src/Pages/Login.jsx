@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import styles from './styles/login.module.css';
+import styles from './styles/Login.module.css';
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
