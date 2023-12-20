@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ProductsContext } from "../context/productsContextComponent";
+import { ProductsContext } from "../context/ProductsContextComponent";
 import styles from "./styles/Products.module.css";
 import { FiHeart } from "react-icons/fi";
 import { CartContext } from "../context/CartContext";

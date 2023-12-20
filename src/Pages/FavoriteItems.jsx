@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { FavoriteContext } from "../context/FavoriteContext";
 import { CartContext } from "../context/CartContext";
-import { ProductsContext } from "../context/productsContextComponent";
+import { ProductsContext } from "../context/ProductsContextComponent";
 import styles from "../Pages/styles/FavoriteItems.module.css";
 
 function FavoriteItems() {

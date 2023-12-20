@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ProductsContext } from "../context/productsContextComponent";
+import { ProductsContext } from "../context/ProductsContextComponent";
 import styles from "./styles/ProductPage.module.css";
 import { FiHeart } from "react-icons/fi";
 
