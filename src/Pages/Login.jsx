@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link ,useNavigate } from 'react-router-dom';
 import styles from './styles/Login.module.css';
 
-const Login = () => {
+
+const Login = ({ onLogin }) => {
+  const navigate = useNavigate();
+
   const [loginData, setLoginData] = useState({
-    identifier: '',
+    identifier: '', // Assuming you use 'identifier' for login
     password: '',
   });
 
@@ -16,11 +20,22 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      // Make a POST request to your login API endpoint using Axios
-      const response = await axios.post('YOUR_LOGIN_API_ENDPOINT', loginData);
+      // Fetch the user data from the mock API
+      const response = await axios.get('https://657a01ea1acd268f9afa8fc8.mockapi.io/users');
 
-      console.log('Login successful!', response.data);
-      // You can redirect to the user's dashboard or perform any other actions here
+      // Check if the entered credentials match any user in the response
+      const user = response.data.find(
+        (u) => u.email === loginData.identifier && u.password === loginData.password
+      );
+
+      if (user) {
+        console.log('Login successful!', user);
+        onLogin(user);
+        navigate('/');
+      } else {
+        console.error('Invalid credentials');
+        // Handle invalid credentials, e.g., show an alert
+      }
     } catch (error) {
       console.error('Error logging in:', error.message);
       // Handle error, e.g., show an alert
@@ -28,21 +43,25 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.container}>
-    <h2>Login</h2>
+    <div className={styles.maincont}>
+    <div className={styles.logincontainer}>
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Username or Email:
-          <input type="text" name="identifier" value={loginData.identifier} onChange={handleChange} required />
-        </label>
+        <input placeholder="Username or Email" type="text" name="identifier" value={loginData.identifier} onChange={handleChange} required />
         <br />
-        <label>
-          Password:
-          <input type="password" name="password" value={loginData.password} onChange={handleChange} required />
-        </label>
+          <input placeholder="Password" type="password" name="password" value={loginData.password} onChange={handleChange} required />
         <br />
         <button type="submit">Login</button>
       </form>
+      <div className={styles.linkcontainer}>
+        <p>
+          Dont have an account?{' '}
+          <Link to="/sign-up" className={styles.link}>
+            Sign Up
+          </Link>
+        </p>
+      </div>
+    </div>
     </div>
   );
 };

@@ -1,23 +1,32 @@
-.Home {
-    max-height: 100vh;
+.editpage {
     display: flex;
-    flex-direction: row;
-    font-size:1.4rem;
-    margin: 0 40px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    justify-content: center;
+    font-size: medium;
 }
 
-.description {
-max-width: 500px ;
-margin: 0px 20px;
-}
+.editcontainer {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding:0 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .editcontainer input {
+    margin-bottom: 3px;
+    width: 100%;
+  }
+  
+  .editcontainer button {
+    margin-top: 10px;
+  }
 
-img {
-    max-height: 520px;
-}
-
-/* Media query for screens with a maximum width of 1200px (television) */
+  /* Media query for screens with a maximum width of 1200px (television) */
 @media screen and (max-width: 1200px) {
     .signupcontainer {
       max-width: 100%;

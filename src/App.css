@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Luckiest+Guy&family=Oswald&display=swap');
 
 body {
-  margin: 0;
   display: flex;
   flex-direction: column;
   font-family: Oswald;
+  
+  
 }
+
 
 /* #root {
   max-width: 1280px;

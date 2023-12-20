@@ -1,60 +1,127 @@
-import React, { useState } from 'react';
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './Components/Navbar/Navbar';
-import Home from './Pages/Home';
-import Login from './Pages/Login';
-import ErrorPage from './Pages/ErrorPage'; 
-import Products from './Pages/Products'
-import CustomProduct from './Pages/CustomProduct'
-import AboutUs from './Pages/AboutUs'
-import ContactUs from './Pages/ContactUs'
-import SignUp from './Pages/SignUp'
-import ProductsContextComponent from './context/ProductsContextComponent'
-import Mainbar from './Components/Mainbar/Mainbar'
-import FaceMakeup from './Pages/FaceMakeup';
-import EyeMakeup from './Pages/EyeMakeup';
-import LipMakeup from './Pages/LipMakeup';
-import SkinCare from './Pages/SkinCare';
-import SearchItem from './Pages/SearchItem';
+import React, { useState } from "react";
+import "./App.css";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import Navbar from "./Components/Navbar/Navbar";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import ErrorPage from "./Pages/ErrorPage";
+import Products from "./Pages/Products";
+import CustomProduct from "./Pages/CustomProduct";
+import AboutUs from "./Pages/AboutUs";
+import SignUp from "./Pages/SignUp";
+import ProductsContextComponent from "./context/productsContextComponent";
+import Mainbar from "./Components/Mainbar/Mainbar";
 import FavoriteItems from "./Pages/FavoriteItems";
-import ShoppingCart from './Pages/ShoppingCart';
+import ShoppingCart from "./Pages/ShoppingCart";
+import AddProduct from "./Pages/AddProduct";
+import EditProduct from "./Pages/EditProduct";
+import DeleteProduct from "./Pages/DeleteProduct";
+import Footer from "./Pages/Footer";
+import CartContextComponent from "./context/CartContext";
+import FavoriteContextComponent from "./context/FavoriteContext";
+import ProductPage from "./Pages/ProductPage";
 
 function App() {
-  const [isError, setIsError] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(() => {
+    const storedLoggedIn = localStorage.getItem("loggedIn");
+    return storedLoggedIn ? JSON.parse(storedLoggedIn) : false;
+  });
+
+  const [username, setUsername] = useState(
+    () => localStorage.getItem("username") || ""
+  );
+
+  const [isAdmin, setIsAdmin] = useState(() => {
+    const storedIsAdmin = localStorage.getItem("isAdmin");
+    return storedIsAdmin ? JSON.parse(storedIsAdmin) : false;
+  });
+
+  const [cart, setCart] = useState([]);
+  const [favorite, setFavorite] = useState([]);
+  const navigate = useNavigate();
+
+  const handleLogin = async (user) => {
+    try {
+      setLoggedIn(true);
+
+      setUsername(user.username);
+      setIsAdmin(user.isAdmin || false);
+
+      localStorage.setItem("loggedIn", true);
+      localStorage.setItem("username", user.username);
+      localStorage.setItem("isAdmin", user.isAdmin || false);
+
+      navigate("/");
+      setCart([]);
+      setFavorite([]);
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
+  };
+
+  const addToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
+
+  const handleLogout = () => {
+    try {
+      setLoggedIn(false);
+
+      setUsername("");
+      setIsAdmin(false);
+
+      localStorage.removeItem("loggedIn");
+      localStorage.removeItem("username");
+      localStorage.removeItem("isAdmin");
+
+      navigate("/");
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
 
   return (
     <>
-      <BrowserRouter>
-        <ProductsContextComponent>
-          {isError ? (
+      <Navbar
+        loggedIn={loggedIn}
+        username={username}
+        isAdmin={isAdmin}
+        onLogout={handleLogout}
+      />
+      <Mainbar loggedIn={loggedIn} />
+      <ProductsContextComponent>
+        <CartContextComponent>
+          <FavoriteContextComponent>
             <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/products"
+                element={<Products loggedIn={loggedIn} isAdmin={isAdmin} />}
+              />
+              <Route
+                path="/products/:id"
+                element={<ProductPage isAdmin={isAdmin} />}
+              />
+              <Route path="/about-us" element={<AboutUs />} />
+
+              <Route path="/login" element={<Login onLogin={handleLogin} />} />
+              <Route
+                path="/sign-up"
+                element={<SignUp onLogin={handleLogin} />}
+              />
+              <Route path="/custom-product" element={<CustomProduct />} />
+              <Route path="/favorite-items" element={<FavoriteItems />} />
+              <Route path="/shopping-cart" element={<ShoppingCart />} />
+              <Route path="/admin/add-product" element={<AddProduct />} />
+              <Route path="/edit-product/:id" element={<EditProduct />} />
+              <Route path="/delete-product/:id" element={<DeleteProduct />} />
+              <Route path="/footer" element={<Footer />} />
+              {/* <Route path="/product-page" element={<ProductPage />} /> */}
               <Route path="*" element={<ErrorPage />} />
             </Routes>
-          ) : (
-            <>
-              <Navbar />
-              <Mainbar />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/about" element={<AboutUs />} />
-                <Route path="/contact" element={<ContactUs />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/sign-up" element={<SignUp />} />
-                <Route path="/custom" element={<CustomProduct />} />
-                <Route path="/face-makeup" element={<FaceMakeup />} />
-                <Route path="/eye-makeup" element={<EyeMakeup />} />
-                <Route path="/lip-makeup" element={<LipMakeup />} />
-                <Route path="/skin-care" element={<SkinCare />} />
-                <Route path="/search-item" element={<SearchItem />} />
-                <Route path="/favorite-items" element={<FavoriteItems />} />
-                <Route path="/shopping-cart" element={<ShoppingCart />} />
-              </Routes>
-            </>
-          )}
-        </ProductsContextComponent>
-      </BrowserRouter>
+          </FavoriteContextComponent>
+        </CartContextComponent>
+      </ProductsContextComponent>
     </>
   );
 }

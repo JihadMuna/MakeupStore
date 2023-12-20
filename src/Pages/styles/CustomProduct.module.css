@@ -1,20 +1,13 @@
-.Home {
-    max-height: 100vh;
+.customCont {
     display: flex;
-    flex-direction: row;
-    font-size:1.4rem;
-    margin: 0 40px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.description {
-max-width: 500px ;
-margin: 0px 20px;
-}
-
-img {
-    max-height: 520px;
+.custom {
+    color: #5a5959;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Media query for screens with a maximum width of 1200px (television) */

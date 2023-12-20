@@ -1,45 +1,211 @@
-/* Posts.css */
-.postcontainer {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    background-color: #1b1a1a;
-    
-  
-    
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.background {
+  max-width: 300px;
+}
+
+.productcontainer {
+  border: 1px solid rgba(162, 79, 119, 0.452);
+  margin: 15px;
+  padding: 5px;
+  width: 240px;
+  height: 450px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #d72e8321;
+  cursor:default;
+}
+
+.productcontainer:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.productcontainer img {
+  width: 220px;
+  height: 233px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.buttonscont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.editButton,
+.deleteButton,
+.cartButton {
+  display: inline-block;
+  padding: 8px 15px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editButton {
+  background-color: #dc298f;
+}
+
+.editButton:hover {
+  background-color: #f34eac;
+}
+
+.deleteButton {
+  background-color: rgb(105, 0, 93);
+}
+
+.deleteButton:hover {
+  background-color:rgb(181, 3, 160);
+}
+
+.categoryFilter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.categoryFilter button {
+  color: white;
+  background-color: rgb(215, 46, 131);
+  margin: 10px;
+  max-width: 120px;
+  border: none;
+  padding: 8px;
+  font-size: larger;
+  position: relative;
+}
+
+.productName {
+  color: rgb(182, 8, 95);
+  font-size: 14px;
+  cursor: pointer;
+  margin: 4px 0 0 0 ;
+}
+
+.categoryFilter button:hover {
+  color: rgb(247, 242, 242);
+  background-color: rgb(226, 84, 155);
+  margin: 10px;
+}
+
+.categoryFilter .subCategory {
+  margin-left: 20px;
+}
+
+.categoryFilter .subCategory button {
+  max-width: 80px;
+}
+
+.categoryFilter span {
+  margin: 10px;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.heart {
+  font-size: x-large;
+  cursor: pointer;
+}
+
+.heart:hover {
+  color: rgb(154, 6, 35);
+}
+
+.cartButton {
+  position: relative;
+}
+
+.cartButton:hover {
+  animation: moveRightAndLeft 1s linear infinite alternate;
+  transition: transform 0.2s ease;
+}
+
+.titlecont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.adminControls {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Media query for screens with a maximum width of 1200px (television) */
+@media screen and (max-width: 1200px) {
+  .signupcontainer {
+    max-width: 100%;
   }
-  .cont{
-    display: flex;
+
+  .shoppingCart,
+  .productcontainer,
+  .editcontainer {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .aboutcont {
+    margin-left: 0;
+  }
+}
+
+/* Media query for screens with a maximum width of 600px (small screens) */
+@media screen and (max-width: 600px) {
+  .signupcontainer,
+  .logincontainer,
+  .productDetails,
+  .productList,
+  .productCards,
+  .productCard,
+  .favContainer,
+  .editpage,
+  .editcontainer,
+  .customCont,
+  .container,
+  .aboutcont {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .cont {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    align-content: center;
-    /* padding: 10px 0; */
-    
-    background-color: #333;
   }
- 
-  
-  h1 ,h3 {
-    color: #333;
-    margin-bottom: 10px;
-    color: rgb(133, 59, 16);
-  }
- 
-  
-  .para {
-    /* color: #555; */
-    line-height: 1.6;
-    color: rgb(246, 141, 80);
-  }
-  
-  /* Optional: Add styling for hover effect */
-  .post-container:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-  }
-  
+}

@@ -1,13 +1,15 @@
 .header2 {
   position: relative;
+  font-family:fantasy;
     margin: 0;
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.412);
     color: black;
     max-width: 1660px ;
+    max-height: 55px;
     padding: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 20px;
   }
   
   .menu {
@@ -15,6 +17,7 @@
   }
 
   nav {
+    position: relative;
     display: flex;
     flex-direction: row;
   align-items: center;
@@ -26,42 +29,24 @@
   }
 
   .title {
-    margin-left: 30rem;
-    font-size: 1.7rem;
-    text-shadow: 200vh;
+ font-size: 1.5rem;
+ align-items: center;
+ color: rgb(198, 22, 110);
   }
 
   .icons li {
     cursor: pointer;
     font-size: x-large;
   }
-  
-.menu {
-  cursor: pointer;
-  font-size: xx-large;
-}
 
-.dropdownContainer {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 25rem;
-  height: 20rem;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
+  .logo {
+    max-width: 45px;
+  }
 
-.dropdownMenu {
-  font-size: x-large;
-}
+  .favorite:hover {
+color: #ff0000;
+  }
 
-.dropdownMenu li {
-  cursor: pointer;
-  padding: 10px;
-}
-
-.dropdownMenu li:hover {
-  color: hotpink;
-  transition: 0.3s;
-}
+  .cart:hover {
+color: #f91ba0;
+  }

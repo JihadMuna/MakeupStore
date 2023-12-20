@@ -1,142 +1,156 @@
 [
     {
-        "username": "admin1",
-        "email": "admin1@admin.com",
-        "password": "adminpassword1",
-        "role": "admin",
-        "id": "1"
+      "username": "user 1",
+      "email": "user1@user.com",
+      "password": "password1",
+      "isAdmin": false,
+      "id": "1"
     },
     {
-        "username": "admin2",
-        "email": "admin2@admin.com",
-        "password": "adminpassword2",
-        "role": "admin",
-        "id": "2"
+      "username": "user 2",
+      "email": "user2@user.com",
+      "password": "password2",
+      "isAdmin": false,
+      "id": "2"
     },
     {
-        "username": "admin3",
-        "email": "admin3@admin.com",
-        "password": "adminpassword3",
-        "role": "admin",
-        "id": "3"
+      "username": "user 3",
+      "email": "user3@user.com",
+      "password": "password3",
+      "isAdmin": false,
+      "id": "3"
     },
     {
-        "username": "admin4",
-        "email": "admin4@admin.com",
-        "password": "adminpassword4",
-        "role": "admin",
-        "id": "4"
+      "username": "user 4",
+      "email": "user4@user.com",
+      "password": "password4",
+      "isAdmin": false,
+      "id": "4"
     },
     {
-        "username": "admin5",
-        "email": "admin5@admin.com",
-        "password": "adminpassword5",
-        "role": "admin",
-        "id": "5"
+      "username": "user 5",
+      "email": "user5@user.com",
+      "password": "password5",
+      "isAdmin": false,
+      "id": "5"
     },
     {
-        "username": "user2",
-        "email": "user2@user.com",
-        "password": "password2",
-        "role": "user",
-        "id": "6"
+      "username": "user 6",
+      "email": "user6@user.com",
+      "password": "password6",
+      "isAdmin": false,
+      "id": "6"
     },
     {
-        "username": "user3",
-        "email": "user3@user.com",
-        "password": "password3",
-        "role": "user",
-        "id": "7"
+      "username": "user 7",
+      "email": "user7@user.com",
+      "password": "password7",
+      "isAdmin": false,
+      "id": "7"
     },
     {
-        "username": "user4",
-        "email": "user4@user.com",
-        "password": "password4",
-        "role": "user",
-        "id": "8"
+      "username": "user 8",
+      "email": "user8@user.com",
+      "password": "password8",
+      "isAdmin": false,
+      "id": "8"
     },
     {
-        "username": "user5",
-        "email": "user5@user.com",
-        "password": "password5",
-        "role": "user",
-        "id": "9"
+      "username": "user 9",
+      "email": "user9@user.com",
+      "password": "password9",
+      "isAdmin": false,
+      "id": "9"
     },
     {
-        "username": "user6",
-        "email": "user6@user.com",
-        "password": "password6",
-        "role": "user",
-        "id": "10"
+      "username": "user 10",
+      "email": "user10@user.com",
+      "password": "password 10",
+      "isAdmin": false,
+      "id": "10"
     },
     {
-        "username": "user7",
-        "email": "user7@user.com",
-        "password": "password7",
-        "role": "user",
-        "id": "11"
+      "username": "user 11",
+      "email": "user11@user.com",
+      "password": "password 11",
+      "isAdmin": false,
+      "id": "11"
     },
     {
-        "username": "user8",
-        "email": "user8@user.com",
-        "password": "password8",
-        "role": "user",
-        "id": "12"
+      "username": "user 12",
+      "email": "user12@user.com",
+      "password": "password 12",
+      "isAdmin": false,
+      "id": "12"
     },
     {
-        "username": "user9",
-        "email": "user9@user.com",
-        "password": "password9",
-        "role": "user",
-        "id": "13"
+      "username": "user 13",
+      "email": "user13@user.com",
+      "password": "password 13",
+      "isAdmin": false,
+      "id": "13"
     },
     {
-        "username": "user10",
-        "email": "user10@user.com",
-        "password": "password10",
-        "role": "user",
-        "id": "14"
+      "username": "user 14",
+      "email": "user14@user.com",
+      "password": "password 14",
+      "isAdmin": false,
+      "id": "14"
     },
     {
-        "username": "user11",
-        "email": "user11@user.com",
-        "password": "password11",
-        "role": "user",
-        "id": "15"
+      "username": "user 15",
+      "email": "user15@user.com",
+      "password": "password 15",
+      "isAdmin": false,
+      "id": "15"
     },
     {
-        "username": "user12",
-        "email": "user12@user.com",
-        "password": "password12",
-        "role": "user",
-        "id": "16"
+      "username": "user 16",
+      "email": "user16@user.com",
+      "password": "password 16",
+      "isAdmin": false,
+      "id": "16"
     },
     {
-        "username": "user13",
-        "email": "user13@user.com",
-        "password": "password13",
-        "role": "user",
-        "id": "17"
+      "username": "user 17",
+      "email": "user17@user.com",
+      "password": "password 17",
+      "isAdmin": false,
+      "id": "17"
     },
     {
-        "username": "user14",
-        "email": "user14@user.com",
-        "password": "password14",
-        "role": "user",
-        "id": "18"
+      "username": "user 18",
+      "email": "user18@user.com",
+      "password": "password 18",
+      "isAdmin": false,
+      "id": "18"
     },
     {
-        "username": "user15",
-        "email": "user15@user.com",
-        "password": "password15",
-        "role": "user",
-        "id": "19"
+      "username": "user 19",
+      "email": "user19@user.com",
+      "password": "password 19",
+      "isAdmin": false,
+      "id": "19"
     },
     {
-        "username": "user16",
-        "email": "user16@user.com",
-        "password": "password16",
-        "role": "user",
-        "id": "20"
+      "username": "user 20",
+      "email": "user20@user.com",
+      "password": "password 20",
+      "isAdmin": false,
+      "id": "20"
+    },
+    {
+      "username": "admin 1",
+      "email": "admin1@admin.com",
+      "password": "adminpassword1",
+      "isAdmin": true,
+      "id": "21"
+    },
+    {
+      "username": "admin 2",
+      "email": "admin2@admin.com",
+      "password": "adminpassword2",
+      "isAdmin": true,
+      "id": "22"
     }
-]
+  ]

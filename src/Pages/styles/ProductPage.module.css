@@ -1,0 +1,180 @@
+.body {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.productContainer,
+.productList {
+  flex: 1;
+  max-width: 600px;
+}
+
+.productDetails {
+  border: 1px solid lightgray;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.productDetails img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.productDetails h4 {
+  margin-bottom: 10px;
+}
+
+.productDetails p {
+  text-align: left;
+}
+
+.productList h2,
+.productContainer h2 {
+  margin-bottom: 10px;
+}
+
+.productCards {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.productCard {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productCard img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.buttonsCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.cartButton {
+  display: inline-block;
+  padding: 8px 15px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #af4c8b;
+}
+
+.cartButton:hover {
+  background-color: #c85da1;
+}
+
+.adminControls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.editButton,
+.deleteButton {
+  display: inline-block;
+  padding: 8px 15px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editButton {
+  background-color: #c22287;
+}
+
+.editButton:hover {
+  background-color: #c74998;
+}
+
+.deleteButton {
+  background-color: rgb(87, 14, 111);
+}
+
+.deleteButton:hover {
+  background-color: rgb(145, 33, 182);
+}
+
+.heart {
+  font-size: x-large;
+  cursor: pointer;
+}
+
+.heart:hover {
+  color: red;
+}
+
+
+/* Media query for screens with a maximum width of 1200px (television) */
+@media screen and (max-width: 1200px) {
+  .signupcontainer {
+    max-width: 100%;
+  }
+
+  .shoppingCart,
+  .productcontainer,
+  .editcontainer {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .aboutcont {
+    margin-left: 0;
+  }
+}
+
+/* Media query for screens with a maximum width of 600px (small screens) */
+@media screen and (max-width: 600px) {
+  .signupcontainer,
+  .logincontainer,
+  .productDetails,
+  .productList,
+  .productCards,
+  .productCard,
+  .favContainer,
+  .editpage,
+  .editcontainer,
+  .customCont,
+  .container,
+  .aboutcont {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .cont {
+    flex-direction: column;
+    align-items: center;
+  }
+}
