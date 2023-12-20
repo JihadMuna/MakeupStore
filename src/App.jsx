@@ -9,7 +9,7 @@ import Products from "./Pages/Products";
 import CustomProduct from "./Pages/CustomProduct";
 import AboutUs from "./Pages/AboutUs";
 import SignUp from "./Pages/SignUp";
-import ProductsContextComponent from "./context/productsContextComponent";
+import ProductsContextComponent from "./context/ProductsContextComponent";
 import Mainbar from "./Components/Mainbar/Mainbar";
 import FavoriteItems from "./Pages/FavoriteItems";
 import ShoppingCart from "./Pages/ShoppingCart";
