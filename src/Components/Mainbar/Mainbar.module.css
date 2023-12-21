@@ -4,7 +4,7 @@
     margin: 0;
     background-color: rgba(211, 211, 211, 0.412);
     color: black;
-    max-width: 1660px ;
+    max-width: 2000px ;
     max-height: 55px;
     padding: 0;
     display: flex;
@@ -50,3 +50,25 @@ color: #ff0000;
   .cart:hover {
 color: #f91ba0;
   }
+
+  /* Media query for screens with a maximum width of 2000px (big screens) */
+@media screen and (max-width: 2000px) {
+  .header2 {
+      max-width: 100%;
+      max-height: 65px;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    .title {
+   font-size: 2rem;
+    }
+
+    .icons li {
+      cursor: pointer;
+      font-size: xx-large;
+    }
+    .logo {
+      max-width: 55px;
+    }
+}
