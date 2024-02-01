@@ -80,6 +80,35 @@
   }
 }
 
+
+/* Media query for screens with a maximum width of 600px (small screens) */
+@media screen and (max-width: 600px) {
+  .signupcontainer,
+  .logincontainer,
+  .productDetails,
+  .productList,
+  .productCards,
+  .productCard,
+  .favContainer,
+  .editpage,
+  .editcontainer,
+  .customCont,
+  .container,
+  .aboutcont {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    font-size: 50%;
+  }
+
+  .cont {
+    flex-direction: column;
+    align-items: center;
+    font-size: 50%;
+  }
+}
+
+
 /* Media query for screens with a maximum width of 600px (small screens) */
 @media screen and (max-width: 600px) {
   .signupcontainer,

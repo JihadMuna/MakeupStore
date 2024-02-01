@@ -4,11 +4,11 @@ import styles from "./Navbar.module.css";
 import { CgProfile } from "react-icons/cg";
 
 const Navbar = ({ loggedIn, username, isAdmin, onLogout }) => {
-    console.log('Navbar Props:', loggedIn, username, isAdmin);
-  
-    return (
-      <header className={styles.header1}>
-        <nav className="navbar">
+  console.log("Navbar Props:", loggedIn, username, isAdmin);
+
+  return (
+    <header className={styles.header1}>
+      <nav className="navbar">
         <ul>
           <li>
             <Link to="/">Main</Link>
@@ -26,30 +26,38 @@ const Navbar = ({ loggedIn, username, isAdmin, onLogout }) => {
       </nav>
       <nav className={styles.sidebar}>
         <ul className={styles.icons}>
-            {loggedIn ? (
-              <>
-                {isAdmin ? (
-                  <li className={styles.controls}>
-                    <p><Link to="/profile"><CgProfile /></Link></p>
-                    {/* Add link to the admin page */}
-                   <p> <Link to="/admin/add-product">Add Product</Link></p>
-                  </li>
-                ) : (
-                  <li>
-                    {loggedIn &&  
-                    <p className={styles.profile}>
-                    <CgProfile />
-                    </p>}
-                    
-                  </li>
-                    
-                )}
+          {loggedIn ? (
+            <>
+              {isAdmin ? (
                 <li className={styles.controls}>
-                  <Link to="/" onClick={onLogout}>Logout</Link>
+                  <p>
+                    <Link to="/profile">
+                      <CgProfile />
+                    </Link>
+                  </p>
+                  {/* Add link to the admin page */}
+                  <p>
+                    {" "}
+                    <Link to="/admin/add-product">Add Product</Link>
+                  </p>
                 </li>
-              </>
-            ) : (
-                   <>
+              ) : (
+                <li>
+                  {loggedIn && (
+                    <p className={styles.profile}>
+                      <CgProfile />
+                    </p>
+                  )}
+                </li>
+              )}
+              <li className={styles.controls}>
+                <Link to="/" onClick={onLogout}>
+                  Logout
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
               <li>
                 <Link to="/sign-up">Sign Up</Link>
               </li>
